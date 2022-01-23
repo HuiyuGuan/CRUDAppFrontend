@@ -1,6 +1,5 @@
 import React, {Fragment, useState} from "react";
 // import api from '../src/api/campuses';
-import campuses from "../../api/campuses";
 import { Navigate } from "react-router-dom";
 
 
