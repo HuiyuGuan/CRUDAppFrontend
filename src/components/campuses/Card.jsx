@@ -1,25 +1,58 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
+import Axios from "axios";
 
 
+const ContactCard = ({props}) => {
 
-const ContactCard = (props) => {
-  const { name, address, img, description } = props.campus;
+  const info = props[0]
+  const showAll = props[1]
+
+  console.log(info)
+  console.log(showAll)
+  
+  function CardLessInfo(){
+    return (
+    <div>
+      <img src={info.imageUrl } /> 
+          <p>{info.name}</p>
+          <p>{info.address }</p>
+          <Link to={'/campuses/'+ info.id} >
+                      view
+          </Link>        
+    </div>)
+  }
+
+
+  
+  function CardWithInfo(){
+    return (
+    <div>
+      <img src={info.imgageUrl } /> 
+          <p>{info.name}</p>
+          <p>{info.address }</p>
+          <p>{info.description }</p>
+          <Link to={'/campuses/'+ info.id} >
+                      view
+          </Link>        
+    </div>)
+  }
+
+  const handleDeleteClick =() =>{
+    // Axios.delete("http://localhost:5000/campuses", {params: {id: info.id}})
+    Axios.delete("http://localhost:5000/campuses", {data: {info : info.id}})
+    .then(reponse => {
+      console.log(reponse);
+    })
+  }
+  
+  
   return (
     <div className="card-item">
-      {/* <img className="campus-image" src={img} alt="campus-img" width="400" />
-      <div className="header">{name}</div>
-      <div>{address}</div>
-      <div>{description}</div>    */}
+      
+          { !(showAll.info) ? <CardLessInfo /> : <CardWithInfo />} 
 
-      <div className="card" style={{margin:1 + 'em'}} >
-            <img className="card-img-top" src={img} alt="Card image cap" />
-            <div className="card-body">
-            <h5>{name}</h5>
-            <h6>{address}</h6>
-            <p className="card-text">{description}</p>
-        </div>
-      </div>
+          <button onClick={handleDeleteClick}>Delete</button>
     </div>
 
     
