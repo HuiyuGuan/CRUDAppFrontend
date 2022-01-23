@@ -14,19 +14,7 @@ const InputCampuses = (props) => {
         description:""
     });
 
-//    const handleChange = (event) => {
-//        event.preventDefault();
-      
 
-//        const fieldName = event.target.getAttribute('name');
-//        const fieldValue = event.target.value;
-//        console.log(fieldValue)
-
-//        const newInfo = {...newCampus};
-//        newInfo[fieldName] = fieldValue;
-
-//        setNewCampus(newInfo);
-//    }
 
    const handleChange2 = (event) => {
        event.preventDefault();
@@ -42,20 +30,7 @@ const InputCampuses = (props) => {
 
         ))
    }
-//    const handleSubmit =(event) => {
-//        event.preventDefault();
-//        const updateCamp = {
-//            name: newCampus.name,
-//            address: newCampus.address,
-//            img: newCampus.img,
-//            description: newCampus.description
-//        };
-//       //need to put current database in '' 
-//        //some insert function to db
-//        props.setCampuses(updateCamp)
 
-
-//    }
     
 
     return (
