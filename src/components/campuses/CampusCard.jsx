@@ -37,17 +37,15 @@ const CampusCard = (props) => {
 
   return (
     <div className="card-item">
-      <div className="card" style={{margin:1 + 'em'}} >
-          <Link to={'/campuses/'+id}>  
-            <img className="card-img-top" src={imageUrl} alt="Card cap"
-             />
-          </Link>
-            <div className="card-body">
-            <h5>{id} </h5>
-            <h5>{name}</h5>
-            <h6>{address}</h6>
-            <p className="card-text">{description}</p>
-            <button  class="btn btn-danger" onClick={deleteHandler}>Delete</button>
+
+      <div className="card" style={{ margin: 1 + 'em' }} >
+      <Link to={`/campuses/${props.campus.id}`}>  
+          <img className="card-img-top" src={imageUrl} alt="Card cap"/>
+        </Link>
+        <div className="card-body">
+          <h5>{id} {name}</h5>
+          <h6>{address}</h6>
+          <p className="card-text">{description}</p>
         </div>
       </div>
     </div>

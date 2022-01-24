@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 
 const StudentCard = (props) => {
-  const {id, firstName, lastName, email, imageUrl, gpa } = props.student;
+  const {id, firstName, lastName, email, imageUrl, gpa } = props.students;
   const [studentInfo, setStudentInfo] = useState([])
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const StudentCard = (props) => {
     <div className="card-item">
 
       <div className="card" style={{margin:1 + 'em'}} >
-          <Link to={"/students/"+ id}>  
+      <Link to={`/students/${props.students.id}`}>  
             <img className="card-img-top" src={imageUrl} alt="Card cap" />
             </Link>
             <div className="card-body">
