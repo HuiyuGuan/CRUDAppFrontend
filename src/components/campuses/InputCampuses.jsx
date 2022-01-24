@@ -27,13 +27,13 @@ const InputCampuses = (props) => {
         ))
     }
 
-    if(isSubmitted) {
+    if (isSubmitted) {
         setIsSubmitted(false)
         return <Navigate to="/campuses" />
-        
+
     }
 
-    
+
 
     return (
         <Fragment>
@@ -43,28 +43,28 @@ const InputCampuses = (props) => {
                     name="id"
                     className="form-control"
                     placeholder='Enter id'
-                    value={newCampus.id}               
+                    value={newCampus.id}
                     onChange={(event) => updateCampus(event)}
                 />
                 <input type="textarea"
                     name="name"
                     className="form-control"
                     placeholder='Enter Name'
-                    value={newCampus.name}                 
+                    value={newCampus.name}
                     onChange={(event) => updateCampus(event)}
                 />
                 <input type="text"
                     name="imageUrl"
                     className="form-control"
                     placeholder='Enter image link'
-                    value={newCampus.imageUrl}    
+                    value={newCampus.imageUrl}
                     onChange={(event) => updateCampus(event)}
                 />
                 <input type="text"
                     name="address"
                     className="form-control"
                     value={newCampus.address}
-                    placeholder='Enter Address'              
+                    placeholder='Enter Address'
                     onChange={(event) => updateCampus(event)}
                 />
                 <input type="text"
@@ -74,7 +74,7 @@ const InputCampuses = (props) => {
                     value={newCampus.description}
                     onChange={(event) => updateCampus(event)}
                 />
-               
+
 
                 <button className="btn btn-primary">Add</button>
             </form>

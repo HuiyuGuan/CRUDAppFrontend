@@ -41,7 +41,7 @@ const deleteHandler =() => {
             <div className="card-body">
             <h5>{id} {firstName} {lastName}</h5>
             <h5>Email: {email}</h5>
-            <button  class="btn btn-danger" onClick={deleteHandler}>Delete</button>
+            <button  className="btn btn-danger" onClick={deleteHandler}>Delete</button>
         </div>
       </div>
     </div>

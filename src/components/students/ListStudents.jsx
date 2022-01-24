@@ -14,7 +14,22 @@ export default function ListStudents(props) {
             />
         )
     });
-  
+
+  if(props.students.length === 0) {
+    return(
+      <div>
+      <h1> StudentList</h1> 
+      <Link to={"/students/add"}>
+          <button>Add Student</button>
+      </Link>
+      <Link to={"/students/change"}>
+          <button>Edit Student</button>
+      </Link>
+       {renderStudents}      
+       <div><h2>No Student</h2></div>
+    </div>
+    )
+  }else{
   return(
     <div>
       <h1> StudentList</h1> 
@@ -28,3 +43,4 @@ export default function ListStudents(props) {
     </div>
   );
 };
+}
