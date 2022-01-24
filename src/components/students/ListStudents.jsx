@@ -9,7 +9,11 @@ export default function ListStudents(props) {
     const renderStudents = props.students.map((student,id)=> {
         return(
             <StudentCard 
+<<<<<<< HEAD
               students= {student}     
+=======
+            students= {student}    
+>>>>>>> 072c6d5e27fda7e3845344da8d26095236e9d23b
                key={id}      
             />
         )
