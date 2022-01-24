@@ -24,20 +24,22 @@ export default function SingleCampus() {
 
    
   Axios.delete(`http://localhost:5000/campuses/${campusesInfo.id}`)
-        .then(response => setIsDelete(true))
-        
+        .then(response =>{
+          console.log(response)} )
+       
         .catch(error => {
           setIsDelete(false)
             console.error('There was an error!', error);
         })
+        window.location.replace('/campuses')
 
-      }
+  }
 
 
   return (
         <div>
             Hello
-        <img  src={campusesInfo.img} />
+        <img  src={campusesInfo.imageUrl} />
         <p> {campusesInfo.name}</p>
         <p> {campusesInfo.address}</p>
         <p> {campusesInfo.description}</p>

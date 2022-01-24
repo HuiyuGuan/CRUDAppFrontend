@@ -38,11 +38,12 @@ const ContactCard = ({props}) => {
     </div>)
   }
 
-  const handleDeleteClick =() =>{
+  const handleDeleteClick =(id, e) =>{
     // Axios.delete("http://localhost:5000/campuses", {params: {id: info.id}})
-    Axios.delete("http://localhost:5000/campuses", {data: {info : info.id}})
-    .then(reponse => {
-      console.log(reponse);
+    Axios.delete(`http://localhost:5000/campuses/${id}`)
+    .then(response => {
+      console.log(response);
+      console.log(response.data)
     })
   }
   
@@ -52,7 +53,7 @@ const ContactCard = ({props}) => {
       
           { !(showAll.info) ? <CardLessInfo /> : <CardWithInfo />} 
 
-          <button onClick={handleDeleteClick}>Delete</button>
+          <button onClick={(e) => handleDeleteClick( info.id,e)}>Delete</button>
     </div>
 
     
