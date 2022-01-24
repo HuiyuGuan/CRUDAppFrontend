@@ -5,27 +5,30 @@ import axios from "axios";
 
 export default function ListCampuses(props) {
 
-    const [campus,setCampus] = useState({})
+  const [campus, setCampus] = useState({})
 
-    const {id} = useParams();
+  const { id } = useParams();
 
-    useEffect(() => {
-            axios.get(`http://localhost:5000/campuses/${id}`).then(
-            (response) =>{
-            setCampus(response.data)
-            }
-        )
-      }, []);
+  useEffect(() => {
+    axios.get(`http://localhost:5000/campuses/${id}`).then(
+      (response) => {
+        setCampus(response.data)
+      }
+    )
+  }, []);
 
-      console.log(campus)
-
-  return(
+  if (campus.length === 0) {
+    return <div><h2>No Campus</h2></div>
+  } else {
+    console.log(campus)
+  }
+  return (
     <div>
-      <h1> Campus</h1> 
+      <h1> Campus</h1>
       <CampusCard
-               campus= {campus}    
-               key={campus.id}      
-            />     
+        campus={campus}
+        key={campus.id}
+      />
     </div>
   );
 }; 
