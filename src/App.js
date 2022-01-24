@@ -14,6 +14,7 @@ import EditStudents from './components/students/EditStudents';
 import SingleCampus from './components/campuses/SingleCampus';
 import SingleStudent from './components/students/SingleStudent';
 
+
 function App() {
 
   const [campuses, setCampuses] = useState([]);
@@ -36,6 +37,8 @@ function App() {
     console.log(res);
     setCampuses([...campuses, res.data]);
   };
+
+
   useEffect(() => {
     const getAllCampuses = async () => {
       const allCampuses = await fetchCampuses();
@@ -50,6 +53,7 @@ function App() {
     return res2.data;
   }
 
+
   const addStudentsHandler = async (student) => {
     console.log(student);
     const req2 = {
@@ -58,17 +62,21 @@ function App() {
     };
     const res2 = await axios.post("http://localhost:5000/students", req2);
     console.log(res2);
-    setStudents([...students, res2.data]);
+    setStudents([...students,res2.data]);
   };
+
+
+ 
 
   useEffect(() => {
     const getAllStudents = async () => {
       const allStudents = await fetchStudents();
-      if (allStudents) setStudents(allStudents);
+      if(allStudents) setStudents(allStudents);
     };
 
     getAllStudents();
-  }, []);
+  },[]);
+
 
 
 
