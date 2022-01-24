@@ -11,7 +11,8 @@ import StudentCard from './components/students/StudentCard';
 import ListStudents from './components/students/ListStudents';
 import EditCampuses from './components/campuses/EditCampuses';
 import EditStudents from './components/students/EditStudents';
-
+import SingleCampus from './components/campuses/SingleCampus';
+import SingleStudent from './components/students/SingleStudent';
 
 function App() {
 
@@ -85,13 +86,14 @@ function App() {
         />} />
         <Route exact path="/campuses/change" element={<EditCampuses campuses={campuses}
         />} />
-        <Route exact path="/campuses/:id" element={<CampusCard />} />
+        <Route exact path={ `/campuses/:id`} element={<SingleCampus campuses={campuses} />} />
         <Route exact path="/students" element={<ListStudents students={students} />} />
         <Route exact path="/students/add" element={<InputStudents students={students}
           setStudents={setStudents}
           addStudentHandler={addStudentsHandler}
         />} />
         <Route exact path="/students/:id" element={<StudentCard />} />
+        <Route exact path="/students/:id" element={<SingleStudent students={students} />} />
         <Route exact path="/students/change" element={<EditStudents students={students}
         />} />
       </Routes>

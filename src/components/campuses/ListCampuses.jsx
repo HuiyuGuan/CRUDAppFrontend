@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import CmpusCard from "./CampusCard";
 
 export default function ListCampuses(props) {
-    console.log(props);
     const renderCampuses = props.campuses.map((campus,id)=> {
         return(
             <CmpusCard

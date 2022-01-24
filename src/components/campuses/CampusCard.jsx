@@ -23,7 +23,7 @@ const CampusCard = (props) => {
     <div className="card-item">
 
       <div className="card" style={{ margin: 1 + 'em' }} >
-        <Link to={"/campuses/" + id}>
+      <Link to={`/campuses/${props.campus.id}`}>  
           <img className="card-img-top" src={imageUrl} alt="Card cap"/>
         </Link>
         <div className="card-body">
