@@ -18,7 +18,7 @@ const EditCampuses = (props) => {
 
         ))
     }
-    async function submitHandler(e){
+    async function submitHandler(e) {
         e.preventDefault()
         await axios.put(`http://localhost:5000/campuses`, newCampus)
         return (<Navigate to="/campuses" />)
@@ -62,10 +62,10 @@ const EditCampuses = (props) => {
                     value={newCampus.description}
                     onChange={(event) => updateCampus(event)}
                 />
-                    <button className="btn btn-primary">Change</button>
+                <button className="btn btn-primary">Change</button>
             </form>
         </Fragment>
 
     )
-    }
+}
 export default EditCampuses;

@@ -9,7 +9,7 @@ export default function ListCampuses(props) {
     const [campus,setCampus] = useState({})
     const [campusStudents, setCampusStudents] = useState([])
 
-    const {id} = useParams();
+  const { id } = useParams();
 
     useEffect(() => {
             axios.get(`http://localhost:5000/campuses/${id}`).then(
@@ -38,7 +38,7 @@ export default function ListCampuses(props) {
 
   return(
     <div>
-      <h1> Campus</h1> 
+      <h1> Campus</h1>
       <CampusCard
                campus= {campus}    
                key={campus.id}      
