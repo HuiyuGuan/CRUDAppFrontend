@@ -9,7 +9,7 @@ export default function ListStudents(props) {
     const renderStudents = props.students.map((student,id)=> {
         return(
             <StudentCard 
-               student= {student}    
+              students= {student}     
                key={id}      
             />
         )
