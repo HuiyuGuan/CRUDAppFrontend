@@ -36,14 +36,14 @@ const EditStudents = (props) => {
                     onChange={(event) => updateStudent(event)}
                 />
                 <input type="textarea"
-                    firstName="firstName"
+                    name="firstName"
                     className="form-control"
                     placeholder='Enter First Name'
                     value={newStudent.firstName}
                     onChange={(event) => updateStudent(event)}
                 />
                 <input type="textarea"
-                    lastName="lastName"
+                    name="lastName"
                     className="form-control"
                     placeholder='Enter Last Name'
                     value={newStudent.lastName}
