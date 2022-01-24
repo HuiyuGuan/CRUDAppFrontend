@@ -1,0 +1,1 @@
+export {default as InputStudents} from "./InputStudents";

@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Card from "./Card";
+import CmpusCard from "./CampusCard";
 
 export default function ListCampuses(props) {
-
     console.log(props);
-
-    const renderCampuses = props.campuses.map((campus,i)=> {
+    const renderCampuses = props.campuses.map((campus,id)=> {
         return(
-            <Card 
+            <CmpusCard
                campus= {campus}    
-               key={i}      
+               key={id}      
             />
         )
     });
@@ -18,10 +16,13 @@ export default function ListCampuses(props) {
   return(
     <div>
       <h1> CampusList</h1> 
-      <Link to={"/add"}>
+      <Link to={"/campuses/add"}>
           <button>Add Campus</button>
       </Link>
-       {renderCampuses}      
+      <Link to={"/campuses/change"}>
+          <button>Edit Campus</button>
+      </Link>
+       {renderCampuses}   
     </div>
   );
 };
