@@ -36,7 +36,9 @@ function App() {
     const res = await axios.post("http://localhost:5000/campuses", req);
     console.log(res);
     setCampuses([...campuses, res.data]);
-  };
+  }
+
+
 
 
   useEffect(() => {

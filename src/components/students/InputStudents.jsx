@@ -17,12 +17,14 @@ const InputStudents = (props) => {
 
     const updateStudent = (event) => {
         setNewStudent((prev) => ({
-            ...prev, [event.target.firstname]: event.target.value
+            ...prev, [event.target.name]: event.target.value
         }
 
         ))
     }
     async function submitHandler(e) {
+        console.log("submitted")
+        console.log(newStudent)
         e.preventDefault()
         await axios.post(`http://localhost:5000/students`, newStudent)
         return (<Navigate to="/students" />)
@@ -31,7 +33,7 @@ const InputStudents = (props) => {
     return (
         <Fragment>
             <h1 className="text-center mt-5">Input Student Info</h1>
-            <form onSubmit={submitHandler} className="mt-5" >
+            <form id ="3" onSubmit={submitHandler} className="mt-5" >
                 <input type="textarea"
                     name="id"
                     className="form-control"
@@ -40,14 +42,14 @@ const InputStudents = (props) => {
                     onChange={(event) => updateStudent(event)}
                 />
                 <input type="textarea"
-                    firstName="firstName"
+                    name="firstName"
                     className="form-control"
                     placeholder='Enter First Name'
                     value={newStudent.firstName}
                     onChange={(event) => updateStudent(event)}
                 />
                 <input type="textarea"
-                    lastName="lastName"
+                    name="lastName"
                     className="form-control"
                     placeholder='Enter Last Name'
                     value={newStudent.lastName}
@@ -76,9 +78,8 @@ const InputStudents = (props) => {
                 />
 
 
-
-                <button className="btn btn-primary">Add</button>
             </form>
+            <button type="submit" form="3" value="Submit">Add</button>
         </Fragment>
 
     )

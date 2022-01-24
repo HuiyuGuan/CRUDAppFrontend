@@ -10,7 +10,7 @@ const InputCampuses = (props) => {
         imageUrl: "",
         address: "",
         description: ""
-    });
+    })
 
     const handleChange2 = (event) => {
         event.preventDefault();
