@@ -100,7 +100,6 @@ function App() {
           setStudents={setStudents}
           addStudentHandler={addStudentsHandler}
         />} />
-        <Route exact path="/students/:id" element={<StudentCard />} />
         <Route exact path="/students/:id" element={<SingleStudent students={students} />} />
         <Route exact path="/students/change" element={<EditStudents students={students}
         />} />
